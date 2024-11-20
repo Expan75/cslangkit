@@ -16,13 +16,10 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: Install dependencies
-        working-directory: CSLangKit
-        run: dotnet restore
+        run: dotnet restore CSLangKit
 
       - name: Build
-        working-directory: CSLangKit
-        run: dotnet build
+        run: dotnet build CSLangKit
 
       - name: Test
-        working-directory: CSLangKit.Tests
-        run: dotnet test
+        run: dotnet test CSLangKit.Tests
