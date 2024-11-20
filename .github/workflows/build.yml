@@ -14,9 +14,15 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+
       - name: Install dependencies
+        working-directory: CSLangKit
         run: dotnet restore
+
       - name: Build
+        working-directory: CSLangKit
         run: dotnet build
-      - name: Test with the dotnet CLI
+
+      - name: Test
+        working-directory: CSLangKit.Tests
         run: dotnet test
